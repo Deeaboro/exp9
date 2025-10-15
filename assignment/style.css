@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #e0e5ec;
+}
+
+.calculator {
+    background-color: #f0f3f6;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff;
+    width: 300px;
+    overflow: hidden;
+}
+
+/* --- Display Styling --- */
+.display {
+    background-color: #222;
+    color: white;
+    padding: 10px 15px;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.previous-operand {
+    font-size: 1rem;
+    color: #a0a0a0;
+    min-height: 1.2rem;
+}
+
+.current-operand {
+    font-size: 2.5rem;
+}
+
+/* --- Buttons Grid Styling --- */
+.buttons-grid {
+    display: grid;
+    /* 4 columns of equal width */
+    grid-template-columns: repeat(4, 1fr); 
+    padding: 10px;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #f0f3f6;
+    /* Neumorphism effect for buttons */
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;
+    transition: background-color 0.1s, box-shadow 0.1s;
+}
+
+button:active {
+    /* "Press" effect */
+    box-shadow: inset 2px 2px 4px #b8b9be, inset -2px -2px 4px #fff;
+}
+
+/* Specific button styling */
+[data-operation], [data-equals] {
+    background-color: #ff9500; /* Orange color for operators */
+    color: white;
+}
+
+[data-all-clear], [data-delete] {
+    background-color: #a5a5a5; /* Grey for clear/delete */
+}
+
+/* Spanning class from HTML */
+.span-two {
+    grid-column: span 2;
+}
